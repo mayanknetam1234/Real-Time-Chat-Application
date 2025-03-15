@@ -1,0 +1,21 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm install --prefix BACKEND && npm install --prefix FRONTEND && npm run build --prefix FRONTEND",
+    "start": "npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayanknetam1234/Real-Time-Chat-Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayanknetam1234/Real-Time-Chat-Application/issues"
+  },
+  "homepage": "https://github.com/mayanknetam1234/Real-Time-Chat-Application#readme",
+  "description": ""
+}
