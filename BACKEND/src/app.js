@@ -14,8 +14,8 @@ const __dirname=path.resolve()
 const PORT=process.env.PORT  ;
 
 //built middleware
-app.use(express.urlencoded({extended:false,limit:"1mb"}))
-app.use(express.json({limit:"1mb"}));
+
+app.use(express.json());
 
 
 //application middleware
@@ -36,16 +36,9 @@ if(process.env.NODE_ENV==="production"){
 
 
 
-const start =async(url)=>{
-    try {
-        await connectDb(url);
-        console.log("db is connected")
-        server.listen(PORT,()=>{
-            console.log(`server listening at port ${PORT}`)
-        })
-    } catch (error) {
-        
-    }
-}
 
-start(process.env.MONGO_URI)
+
+server.listen(PORT,()=>{
+    console.log(`server listening at port ${PORT}`)
+    connectDb(process.env.MONGO_URI)
+})
