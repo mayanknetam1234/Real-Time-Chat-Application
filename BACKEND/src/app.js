@@ -14,8 +14,8 @@ const __dirname=path.resolve()
 const PORT=process.env.PORT ||5001 ;
 
 //built middleware
-
-app.use(express.json({  }));
+app.use(express.urlencoded({extended:false,limit:"1mb"}))
+app.use(express.json({limit:"1mb"}));
 
 
 //application middleware
