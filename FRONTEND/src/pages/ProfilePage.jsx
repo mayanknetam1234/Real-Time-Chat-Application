@@ -7,8 +7,7 @@ import { useState } from "react";
 const ProfilePage = () => {
   const {isUpdatingProfile,authUser,updateProfile,setIsUpdatingProfile}=useAuthStore();
   const [inputProfile,setInputProfile]=useState(null)
-  console.log("auth user",authUser)
-
+ 
 
   const handleImageUpload=(e)=>{
     const file=e.target.files[0];
@@ -25,7 +24,7 @@ const ProfilePage = () => {
     }
 
   }
-  console.log(authUser.profilePic)
+ 
   return (
     <div className="h-screen bg-slate-700 flex flex-col items-center pt-20 gap-14">
       {/* profile upload section */}

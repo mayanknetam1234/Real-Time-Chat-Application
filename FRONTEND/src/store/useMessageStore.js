@@ -58,7 +58,7 @@ const useMessageStore=create((set,get)=>({
         if(!selectedUser) return;
 
         socket.on("newMessage",(newMessage)=>{
-            console.log(newMessage)
+           
             if(newMessage.senderId==selectedUser._id){
                 set({
                     messages:[...get().messages,newMessage]

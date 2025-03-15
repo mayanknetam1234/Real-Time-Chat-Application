@@ -14,7 +14,7 @@ export const getAllUser=async(req,res)=>{
         const filteredUser=await userModel.find({_id:{$ne:userLoggedIn}}).select("-password")
         return res.status(200).json({users:filteredUser})
     } catch (error) {
-        console.log(error)
+       
         res.status(500).json({message:"server error"})
     }
 }
@@ -35,7 +35,7 @@ export const getMessages=async(req,res)=>{
 
         res.status(200).json({messages})
     } catch (error) {
-        console.log(error)
+       
         res.status(500).json({message:"server error"})
     }
 
@@ -66,7 +66,7 @@ export const sendMessage=async(req,res)=>{
 
         res.status(200).json({response})
     } catch (error) {
-        console.log(error)
+       
         res.status(500).json({message:"server error"})
     }
 }

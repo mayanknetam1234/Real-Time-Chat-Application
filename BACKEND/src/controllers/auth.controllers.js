@@ -26,7 +26,6 @@ export const signUp=async(req,res)=>{
         return res.status(200).json({message:"user created",user})
         
     } catch (error) {
-        console.log(error)
         res.status(500).json({
             message:"unsuccessful"
         })
@@ -59,7 +58,7 @@ export const login=async(req,res)=>{
 
         
     } catch (error) {
-        console.log(error)
+       
         res.send(500).json({
             message:"internal server error"
         })
@@ -71,7 +70,7 @@ export const logout=async(req,res)=>{
         return res.status(200).json({message:"logout successful"})
         
     } catch (error) {
-        console.log(error)
+       
         res.status(500).json({message:"internal server error"})
     }
 }
@@ -87,7 +86,7 @@ export const updateProfile=async(req,res)=>{
         const user=await userModel.findByIdAndUpdate(userId,{profilePic:uploadResponse.secure_url},{new:true}).select("-password")
         return res.status(200).json({message:"profile pic uploaded",user})
     } catch (error) {
-        console.log(error)
+       
         res.status(400).json({message:"internal server error"})
     }
 }
@@ -96,7 +95,7 @@ export const getProfile=async(req,res)=>{
     try {
         return res.status(200).json({message:"got the user",user:req.user})
     } catch (error) {
-        console.log(error)
+       
         res.status(500).json({message:"error"})
     }
 }

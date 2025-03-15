@@ -11,7 +11,7 @@ dotenv.config()
 
 const __dirname=path.resolve()
 
-const PORT=process.env.PORT ||5001 ;
+const PORT=process.env.PORT  ;
 
 //built middleware
 app.use(express.urlencoded({extended:false,limit:"1mb"}))
