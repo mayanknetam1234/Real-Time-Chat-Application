@@ -15,7 +15,7 @@ const PORT=process.env.PORT  ;
 
 //built middleware
 
-app.use(express.json());
+app.use(express.json({limit:"10mb"}));
 
 
 //application middleware
